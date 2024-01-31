@@ -13,4 +13,8 @@ createdb:
 
 dropdb:
 	docker exec -it postgres_test dropdb simple_bank
-.PHONY: postgres createdb dropdb migrateup migratedown
+
+sqlc:
+	sqlc generate
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc
