@@ -3,12 +3,12 @@ package db
 import (
 	"context"
 	"database/sql"
-	"fmt"
+	"testing"
+	"time"
+
 	"github.com/martin378rm/simplebank/util"
 	_ "github.com/stretchr/testify"
 	"github.com/stretchr/testify/require"
-	"testing"
-	"time"
 )
 
 func createRandomAccount(t *testing.T) Account {
@@ -21,7 +21,6 @@ func createRandomAccount(t *testing.T) Account {
 	account, err := testQueries.CreateAccount(context.Background(), arg)
 
 	require.NoError(t, err)
-	fmt.Println(account)
 	require.NotEmpty(t, account)
 
 	require.Equal(t, arg.Owner, account.Owner)

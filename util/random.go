@@ -1,6 +1,7 @@
 package util
 
 import (
+	"fmt"
 	"math/rand"
 	"strings"
 	"time"
@@ -21,6 +22,7 @@ func RandomInt(min, max int64) int64 {
 
 // RandomString generates a random string of length n
 func RandomString(n int) string {
+	fmt.Println("Hello")
 	var sb strings.Builder
 	k := len(alphabet)
 

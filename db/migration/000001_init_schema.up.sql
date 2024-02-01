@@ -6,6 +6,7 @@ CREATE TABLE "accounts" (
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
+-- entries table for record that money is moving out or moving in
 CREATE TABLE "entries" (
   "id" bigserial PRIMARY KEY,
   "account_id" bigint NOT NULL,
