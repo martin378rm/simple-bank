@@ -13,7 +13,7 @@ type Store struct {
 }
 
 // NewStore creates a new store
-func NewStore(db *sql.DB) *Store {
+func NewStore1(db *sql.DB) *Store {
 	return &Store{
 		db:      db,
 		Queries: New(db),
@@ -21,7 +21,7 @@ func NewStore(db *sql.DB) *Store {
 }
 
 // ExecTx executes a function within a database transaction
-func (store *Store) execTx(ctx context.Context, fn func(*Queries) error) error {
+func (store *Store) execTx1(ctx context.Context, fn func(*Queries) error) error {
 	tx, err := store.db.BeginTx(ctx, nil)
 	if err != nil {
 		return err
@@ -57,7 +57,7 @@ type TransferTxResult struct {
 
 // TransferTx performs a money transfer from one account to the other.
 // It creates the transfer, add account entries, and update accounts' balance within a database transaction
-func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
+func (store *Store) TransferTx1(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
 	var result TransferTxResult
 
 	err := store.execTx(ctx, func(q *Queries) error {
