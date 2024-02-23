@@ -24,7 +24,7 @@ jobs:
         # Provide the password for postgres
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgrescl
+          POSTGRES_PASSWORD: postgres
           POSTGRES_DB: simple_bank
         ports:
           # Maps tcp port 5432 on service container to the host
